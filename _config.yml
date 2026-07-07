@@ -8,3 +8,4 @@ github:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+domain: terbrowser.com
