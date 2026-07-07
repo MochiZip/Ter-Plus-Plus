@@ -1,0 +1,10 @@
+theme: jekyll-theme-cayman
+title: Ter-Plus-Plus Browser
+description: A modern, fast, and lightweight web browser
+show_downloads: false
+github:
+  repository_url: https://github.com/MochiZip/Ter-Plus-Plus
+  is_project_page: false
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
