@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ter-Plus-Plus - A modern, fast, and lightweight web browser">
+    <title>Ter-Plus-Plus Browser | Download Now</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav a {
+            display: block;
+            padding: 15px 25px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #764ba2;
+            background: #f0f0f0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 20px;
+        }
+        
+        .features {
+            background: #f8f9fa;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .feature-card p {
+            color: #666;
+        }
+        
+        .downloads {
+            text-align: center;
+        }
+        
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .download-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid #667eea;
+        }
+        
+        .download-card h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .download-card .btn {
+            display: block;
+            margin-top: 15px;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .stat {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        .stat-label {
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#downloads">Download</a></li>
+            <li><a href="./BUILDING.html">Build</a></li>
+            <li><a href="./CONTRIBUTING.html">Contribute</a></li>
+            <li><a href="https://github.com/MochiZip/Ter-Plus-Plus" target="_blank">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <div class="container">
+            <h1>🚀 Ter-Plus-Plus Browser</h1>
+            <p>A modern, fast, and lightweight web browser built for performance</p>
+            <div class="cta-buttons">
+                <a href="#downloads" class="btn btn-primary">Download Now</a>
+                <a href="./GITHUB_PAGES_SETUP.html" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Why Choose Ter-Plus-Plus?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Blazingly fast performance with optimized rendering and minimal memory footprint</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy First</h3>
+                    <p>Your data stays yours. No tracking, no telemetry, pure privacy-focused browsing</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Customizable</h3>
+                    <p>Personalize every aspect of your browser with themes, extensions, and settings</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Cross-Platform</h3>
+                    <p>Works seamlessly on Windows, macOS, and Linux with consistent experience</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Secure</h3>
+                    <p>Built with security best practices and regular security updates</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Open Source</h3>
+                    <p>Fully open source on GitHub. Community-driven development</p>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">50%</div>
+                    <div class="stat-label">Faster Loading</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">70%</div>
+                    <div class="stat-label">Less Memory</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Privacy Score</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="downloads" id="downloads">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Download Ter-Plus-Plus</h2>
+            <p style="font-size: 1.1rem; color: #666; margin-bottom: 30px;">Choose your operating system</p>
+            <div class="download-grid">
+                <div class="download-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">🪟</div>
+                    <h3>Windows</h3>
+                    <p>Windows 7 or later</p>
+                    <a href="./downloads.html#windows" class="btn btn-primary">Download</a>
+                </div>
+                <div class="download-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">🍎</div>
+                    <h3>macOS</h3>
+                    <p>macOS 10.12 or later</p>
+                    <a href="./downloads.html#macos" class="btn btn-primary">Download</a>
+                </div>
+                <div class="download-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">🐧</div>
+                    <h3>Linux</h3>
+                    <p>Ubuntu, Fedora, and more</p>
+                    <a href="./downloads.html#linux" class="btn btn-primary">Download</a>
+                </div>
+            </div>
+            <p style="margin-top: 50px; color: #999;">
+                <a href="./downloads.html" style="color: #667eea;">View all downloads and installation instructions →</a>
+            </p>
+        </div>
+    </section>
+
+    <section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Experience the Difference?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95;">Join thousands of users enjoying a faster, more private web experience</p>
+            <a href="#downloads" class="btn" style="background: white; color: #667eea; display: inline-block;">Get Started Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Ter-Plus-Plus. All rights reserved.</p>
+            <p>
+                <a href="https://github.com/MochiZip/Ter-Plus-Plus">GitHub</a> | 
+                <a href="./CONTRIBUTING.html">Contribute</a> | 
+                <a href="./docs/">Documentation</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">
+                Built with ❤️ by the Ter-Plus-Plus community
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
